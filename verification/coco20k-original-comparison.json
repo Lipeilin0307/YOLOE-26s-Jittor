@@ -1,0 +1,132 @@
+{
+  "TP/best": {
+    "metrics/precision(B)": {
+      "pytorch": 0.6584026886918837,
+      "jittor": 0.6580616932511423,
+      "difference": -0.0003409954407413984
+    },
+    "metrics/recall(B)": {
+      "pytorch": 0.5344842303776035,
+      "jittor": 0.5337846912903865,
+      "difference": -0.0006995390872169827
+    },
+    "metrics/mAP50(B)": {
+      "pytorch": 0.5729703878062292,
+      "jittor": 0.5734772435591882,
+      "difference": 0.0005068557529589457
+    },
+    "metrics/mAP50-95(B)": {
+      "pytorch": 0.4121421133526866,
+      "jittor": 0.41245733442034876,
+      "difference": 0.00031522106766218583
+    }
+  },
+  "VP/best": {
+    "metrics/precision(B)": {
+      "pytorch": 0.5117708580943126,
+      "jittor": 0.5165458636438631,
+      "difference": 0.0047750055495505705
+    },
+    "metrics/recall(B)": {
+      "pytorch": 0.4508158385965732,
+      "jittor": 0.44834135477579495,
+      "difference": -0.0024744838207782505
+    },
+    "metrics/mAP50(B)": {
+      "pytorch": 0.45037959880548595,
+      "jittor": 0.4519793583036151,
+      "difference": 0.0015997594981291274
+    },
+    "metrics/mAP50-95(B)": {
+      "pytorch": 0.32774467285143244,
+      "jittor": 0.3276629425772983,
+      "difference": -8.17302741341619e-05
+    }
+  },
+  "PF/best": {
+    "metrics/precision(B)": {
+      "pytorch": 0.7079264250278045,
+      "jittor": 0.7099011411001511,
+      "difference": 0.0019747160723466717
+    },
+    "metrics/recall(B)": {
+      "pytorch": 0.5724232833356268,
+      "jittor": 0.5751754506674006,
+      "difference": 0.002752167331773858
+    },
+    "metrics/mAP50(B)": {
+      "pytorch": 0.6529261689751609,
+      "jittor": 0.6542051331064078,
+      "difference": 0.0012789641312469513
+    },
+    "metrics/mAP50-95(B)": {
+      "pytorch": 0.45247783726114754,
+      "jittor": 0.4533035979151937,
+      "difference": 0.0008257606540461593
+    }
+  },
+  "PF/coco80": {
+    "metrics/precision(B)": {
+      "pytorch": 0.6583212084728189,
+      "jittor": 0.6580613538792204,
+      "difference": -0.000259854593598563
+    },
+    "metrics/recall(B)": {
+      "pytorch": 0.5344606200785142,
+      "jittor": 0.5337845394278261,
+      "difference": -0.0006760806506881378
+    },
+    "metrics/mAP50(B)": {
+      "pytorch": 0.5729949976438476,
+      "jittor": 0.573323444241473,
+      "difference": 0.00032844659762532036
+    },
+    "metrics/mAP50-95(B)": {
+      "pytorch": 0.41194726108893504,
+      "jittor": 0.4122001244709665,
+      "difference": 0.0002528633820314541
+    }
+  },
+  "SEG/best": {
+    "metrics/precision(B)": {
+      "pytorch": 0.6584026886918837,
+      "jittor": 0.6580614379356577,
+      "difference": -0.0003412507562259304
+    },
+    "metrics/recall(B)": {
+      "pytorch": 0.5344842303776035,
+      "jittor": 0.5337843620194379,
+      "difference": -0.0006998683581656007
+    },
+    "metrics/mAP50(B)": {
+      "pytorch": 0.5729703878062292,
+      "jittor": 0.5734774084390122,
+      "difference": 0.0005070206327829618
+    },
+    "metrics/mAP50-95(B)": {
+      "pytorch": 0.4121421133526866,
+      "jittor": 0.41245650878722523,
+      "difference": 0.00031439543453865015
+    },
+    "metrics/precision(M)": {
+      "pytorch": 0.6381937177102049,
+      "jittor": 0.6623321374349841,
+      "difference": 0.024138419724779148
+    },
+    "metrics/recall(M)": {
+      "pytorch": 0.49779282476212555,
+      "jittor": 0.4942160755335386,
+      "difference": -0.003576749228586973
+    },
+    "metrics/mAP50(M)": {
+      "pytorch": 0.5185904923356749,
+      "jittor": 0.532678592025488,
+      "difference": 0.01408809968981306
+    },
+    "metrics/mAP50-95(M)": {
+      "pytorch": 0.294099231260128,
+      "jittor": 0.3054801003110024,
+      "difference": 0.011380869050874431
+    }
+  }
+}

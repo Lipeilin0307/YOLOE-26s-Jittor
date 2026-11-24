@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+/mobileclip2_b.ts
+/init/*.npz
+/weights/*.npz
+/assets/
+/data/
+/runs/
+*.part

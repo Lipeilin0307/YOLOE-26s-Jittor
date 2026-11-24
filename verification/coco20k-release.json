@@ -1,0 +1,107 @@
+{
+  "TP": {
+    "file": "weights/tp-coco20k.npz",
+    "best_sha256": "20b0cd4feec3c9aadc4fa346095be951ff5e843e513d8fbb8dca0e17a5242cad",
+    "parent_sha256": "6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416",
+    "epochs": 30,
+    "steps": 10747,
+    "images": 5000,
+    "metrics": {
+      "best": {
+        "metrics/precision(B)": 0.6594057564007014,
+        "metrics/recall(B)": 0.529332415020731,
+        "metrics/mAP50(B)": 0.5710447869909624,
+        "metrics/mAP50-95(B)": 0.41138154856626824,
+        "fitness": 0.41138154856626824
+      }
+    }
+  },
+  "PF": {
+    "file": "weights/pf-coco20k.npz",
+    "best_sha256": "03222ee421bf3013fe49b4e07f0e77335852c1a1a8d27105497d2bab17d1f569",
+    "parent_sha256": "20b0cd4feec3c9aadc4fa346095be951ff5e843e513d8fbb8dca0e17a5242cad",
+    "epochs": 10,
+    "steps": 4497,
+    "images": 5000,
+    "metrics": {
+      "best": {
+        "metrics/precision(B)": 0.7030533498360916,
+        "metrics/recall(B)": 0.5698912893903949,
+        "metrics/mAP50(B)": 0.6492372296802962,
+        "metrics/mAP50-95(B)": 0.4504627691689942,
+        "fitness": 0.4504627691689942
+      },
+      "coco80": {
+        "metrics/precision(B)": 0.6595118743785042,
+        "metrics/recall(B)": 0.5293324094685048,
+        "metrics/mAP50(B)": 0.5709317181731521,
+        "metrics/mAP50-95(B)": 0.41116651599702075,
+        "fitness": 0.41116651599702075
+      }
+    }
+  },
+  "VP": {
+    "file": "weights/vp-coco20k.npz",
+    "best_sha256": "cd8398b76409692f3c0a4e826a789a021605df9b10e888bea7fc9922f91f871c",
+    "parent_sha256": "20b0cd4feec3c9aadc4fa346095be951ff5e843e513d8fbb8dca0e17a5242cad",
+    "epochs": 10,
+    "steps": 4497,
+    "images": 5000,
+    "metrics": {
+      "best": {
+        "metrics/precision(B)": 0.5160486303209735,
+        "metrics/recall(B)": 0.44325072965817114,
+        "metrics/mAP50(B)": 0.4498675619644734,
+        "metrics/mAP50-95(B)": 0.32662197176108365,
+        "fitness": 0.32662197176108365
+      }
+    }
+  },
+  "SEG": {
+    "file": "weights/seg-coco20k.npz",
+    "best_sha256": "434477378f383e6adb9a62580a696008c293350eaa445cab520e198eec650274",
+    "parent_sha256": "20b0cd4feec3c9aadc4fa346095be951ff5e843e513d8fbb8dca0e17a5242cad",
+    "epochs": 10,
+    "steps": 4497,
+    "images": 5000,
+    "metrics": {
+      "best": {
+        "metrics/precision(B)": 0.659405713828443,
+        "metrics/recall(B)": 0.5293321746947555,
+        "metrics/mAP50(B)": 0.5710447478281659,
+        "metrics/mAP50-95(B)": 0.4113823143180471,
+        "metrics/precision(M)": 0.6491011203319333,
+        "metrics/recall(M)": 0.5012089738561745,
+        "metrics/mAP50(M)": 0.5311688097400964,
+        "metrics/mAP50-95(M)": 0.30649780722230036,
+        "fitness": 0.7178801215403474
+      }
+    }
+  },
+  "pytorch_and_jittor_best_ap50_95_points": {
+    "TP/best": {
+      "pytorch": 41.21421133526866,
+      "jittor": 41.13815221455036
+    },
+    "VP/best": {
+      "pytorch": 32.774467285143245,
+      "jittor": 32.66219828264707
+    },
+    "PF/best": {
+      "pytorch": 45.247783726114754,
+      "jittor": 45.046276916899416
+    },
+    "PF/coco80": {
+      "pytorch": 41.194726108893505,
+      "jittor": 41.116651599702074
+    },
+    "SEG/best": {
+      "pytorch": 41.21421133526866,
+      "jittor": 41.138230256227786
+    },
+    "SEG/mask": {
+      "pytorch": 29.4099231260128,
+      "jittor": 30.649780484995503
+    }
+  }
+}

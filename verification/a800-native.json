@@ -1,0 +1,588 @@
+{
+  "runtime": {
+    "python": "3.10.8",
+    "jittor": "1.3.11.0",
+    "numpy": "1.23.5",
+    "packages_present": {
+      "torch": false,
+      "torchvision": false,
+      "ultralytics": false
+    }
+  },
+  "prepared": {
+    "split": {
+      "profile": "smoke",
+      "splits": {
+        "train": {
+          "images": 200,
+          "boxes": 1436,
+          "masks": 1436,
+          "manifest_sha256": "8b90422e1cf6e12e05d07f8b0648d9750dcbdef4a6a3588e570b52c85c3f9f8f",
+          "parent_manifest_sha256": "0791b2269c1f041746d159571b75b57f458bff00041d7d34b0b748dd6a17fa45"
+        },
+        "val": {
+          "images": 200,
+          "boxes": 1396,
+          "masks": 1396,
+          "manifest_sha256": "741fd1c51da7d7aa19c734a662e1d6778590bf2bde0120821a73c9f95c58e9f3",
+          "parent_manifest_sha256": "612097d209d870b260f9b4cb9c5ccdc32586da617ccf0f25c0627e60f8877285"
+        }
+      }
+    },
+    "identical_label_and_manifest_files": 802
+  },
+  "augmentation": {
+    "size": 640,
+    "matched": [
+      "img",
+      "cls",
+      "bboxes",
+      "masks",
+      "visuals",
+      "text_ids"
+    ],
+    "examples": [
+      {
+        "index": 2,
+        "mosaic": true,
+        "objects": 3
+      },
+      {
+        "index": 31,
+        "mosaic": true,
+        "objects": 11
+      },
+      {
+        "index": 52,
+        "mosaic": true,
+        "objects": 9
+      },
+      {
+        "index": 2,
+        "mosaic": false,
+        "objects": 2
+      },
+      {
+        "index": 31,
+        "mosaic": false,
+        "objects": 1
+      },
+      {
+        "index": 52,
+        "mosaic": false,
+        "objects": 12
+      }
+    ]
+  },
+  "training": {
+    "train_images": 200,
+    "val_images": 200,
+    "batch": 8,
+    "imgsz": 320,
+    "stages": {
+      "TP": {
+        "epochs": 1,
+        "steps": 25,
+        "changed_tensors": 394,
+        "best_sha": "1a7c1f041b081d5c4166fcf52be653de28bd0c524e4b1d60e747ffb8c6aee2b5",
+        "last_sha": "1a7c1f041b081d5c4166fcf52be653de28bd0c524e4b1d60e747ffb8c6aee2b5",
+        "parent_sha": "6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416",
+        "independent_validation": {
+          "best": {
+            "metrics/precision(B)": 0.005616381612837422,
+            "metrics/recall(B)": 0.2926777760919701,
+            "metrics/mAP50(B)": 0.005026922205501763,
+            "metrics/mAP50-95(B)": 0.0038180008893172698,
+            "fitness": 0.0038180008893172698
+          }
+        }
+      },
+      "VP": {
+        "epochs": 1,
+        "steps": 25,
+        "changed_tensors": 62,
+        "best_sha": "47982f920c59b58f13b19a23504a85a0e87e8348553d493c39ba025ad38d7013",
+        "last_sha": "47982f920c59b58f13b19a23504a85a0e87e8348553d493c39ba025ad38d7013",
+        "parent_sha": "1a7c1f041b081d5c4166fcf52be653de28bd0c524e4b1d60e747ffb8c6aee2b5",
+        "independent_validation": {
+          "best": {
+            "metrics/precision(B)": 0.009938464101937838,
+            "metrics/recall(B)": 0.14168583801222487,
+            "metrics/mAP50(B)": 0.013166677664618267,
+            "metrics/mAP50-95(B)": 0.01103701510660167,
+            "fitness": 0.01103701510660167
+          }
+        }
+      },
+      "PF": {
+        "epochs": 1,
+        "steps": 25,
+        "changed_tensors": 12,
+        "best_sha": "3e13a04d10fbb4f88d19aeec813d64b3e762d4ef8b16fce0b6535c83b22aa84a",
+        "last_sha": "3e13a04d10fbb4f88d19aeec813d64b3e762d4ef8b16fce0b6535c83b22aa84a",
+        "parent_sha": "1a7c1f041b081d5c4166fcf52be653de28bd0c524e4b1d60e747ffb8c6aee2b5",
+        "independent_validation": {
+          "best": {
+            "metrics/precision(B)": 0.486470970825664,
+            "metrics/recall(B)": 0.37177650429799425,
+            "metrics/mAP50(B)": 0.35923164084634795,
+            "metrics/mAP50-95(B)": 0.21981740815978199,
+            "fitness": 0.21981740815978199
+          },
+          "coco80": {
+            "metrics/precision(B)": 0.005616381612837422,
+            "metrics/recall(B)": 0.2926777760919701,
+            "metrics/mAP50(B)": 0.005026922205501763,
+            "metrics/mAP50-95(B)": 0.0038180008893172698,
+            "fitness": 0.0038180008893172698
+          }
+        }
+      },
+      "SEG": {
+        "epochs": 1,
+        "steps": 25,
+        "changed_tensors": 68,
+        "best_sha": "f3f68ec03eb9a8fc635a280f39d181453adf1b5112e95fd83df8e9196abd3ec4",
+        "last_sha": "f3f68ec03eb9a8fc635a280f39d181453adf1b5112e95fd83df8e9196abd3ec4",
+        "parent_sha": "1a7c1f041b081d5c4166fcf52be653de28bd0c524e4b1d60e747ffb8c6aee2b5",
+        "independent_validation": {
+          "best": {
+            "metrics/precision(B)": 0.005616381612837422,
+            "metrics/recall(B)": 0.2926777760919701,
+            "metrics/mAP50(B)": 0.005026922205501763,
+            "metrics/mAP50-95(B)": 0.0038180008893172698,
+            "metrics/precision(M)": 0.002337034308012838,
+            "metrics/recall(M)": 0.0389528429217743,
+            "metrics/mAP50(M)": 0.001094902417357452,
+            "metrics/mAP50-95(M)": 0.0003325317961935492,
+            "fitness": 0.004150532685510819
+          }
+        }
+      }
+    }
+  },
+  "init_sha256": {
+    "det.json": "37edbe23635c3d6f3f966bff65e4dfa20c4b66b6e5fd292e22e1d184236de9ad",
+    "seg.json": "1836e27d184a8e3995d4d0698dda971fa23fc9cbdf2a491050ca2f0202ae137b",
+    "det.npz": "6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416",
+    "seg.npz": "e1113357bb8cb70bb4da0757db6c1fb517543ef175e15d7f7fcae64a7bbeef01",
+    "names.json": "870d9b62483583605673c37812a780964045f6009eee31e4fa5879ae3a71d0d0",
+    "raw-text.npy": "47466ad1fa74e5b8f7bafebfed19e20f940e99f92a0a7aa2e814a36931bd2e19"
+  },
+  "validator_same_checkpoint": {
+    "packages_present": {
+      "torch": false,
+      "torchvision": false,
+      "ultralytics": false
+    },
+    "stages": {
+      "TP": {
+        "checkpoint_sha": "08e1c4c737d326fdcc34ade0da8dffd8dc8ead0807ca306dd1db9f97c21db932",
+        "images": 200,
+        "metrics": {
+          "best": {
+            "metrics/precision(B)": {
+              "reference": 0.007328970218178702,
+              "native": 0.007328970218178702,
+              "delta": 0.0
+            },
+            "metrics/recall(B)": {
+              "reference": 0.29808806390159304,
+              "native": 0.29808806390159304,
+              "delta": 0.0
+            },
+            "metrics/mAP50(B)": {
+              "reference": 0.007246568070284396,
+              "native": 0.007246568070284396,
+              "delta": 0.0
+            },
+            "metrics/mAP50-95(B)": {
+              "reference": 0.005821768803780573,
+              "native": 0.005821768803780573,
+              "delta": 0.0
+            },
+            "fitness": {
+              "reference": 0.005821768803780573,
+              "native": 0.005821768803780573,
+              "delta": 0.0
+            }
+          }
+        }
+      },
+      "VP": {
+        "checkpoint_sha": "029ffa443c03f9f29afb4cd3945844b0da563955550e940d2738cdd9b1df4c1f",
+        "images": 200,
+        "metrics": {
+          "best": {
+            "metrics/precision(B)": {
+              "reference": 0.010855101243554953,
+              "native": 0.010855040210833394,
+              "delta": -6.1032721558954e-08
+            },
+            "metrics/recall(B)": {
+              "reference": 0.08371484741124983,
+              "native": 0.08371484741124983,
+              "delta": 0.0
+            },
+            "metrics/mAP50(B)": {
+              "reference": 0.011936480017209681,
+              "native": 0.01193646520855181,
+              "delta": -1.480865787113761e-08
+            },
+            "metrics/mAP50-95(B)": {
+              "reference": 0.009815563001047588,
+              "native": 0.009815546189159342,
+              "delta": -1.681188824612101e-08
+            },
+            "fitness": {
+              "reference": 0.009815563001047588,
+              "native": 0.009815546189159342,
+              "delta": -1.681188824612101e-08
+            }
+          }
+        }
+      },
+      "PF": {
+        "checkpoint_sha": "93cfa33af777d7ec4f6b2efbf35a5085cca381aa76d584ee90832adbbfa35fa6",
+        "images": 200,
+        "metrics": {
+          "best": {
+            "metrics/precision(B)": {
+              "reference": 0.4952671669564347,
+              "native": 0.4952671669564347,
+              "delta": 0.0
+            },
+            "metrics/recall(B)": {
+              "reference": 0.3524355300859599,
+              "native": 0.3524355300859599,
+              "delta": 0.0
+            },
+            "metrics/mAP50(B)": {
+              "reference": 0.36223734563135435,
+              "native": 0.36223734563135435,
+              "delta": 0.0
+            },
+            "metrics/mAP50-95(B)": {
+              "reference": 0.22762480854031025,
+              "native": 0.22762480854031025,
+              "delta": 0.0
+            },
+            "fitness": {
+              "reference": 0.22762480854031025,
+              "native": 0.22762480854031025,
+              "delta": 0.0
+            }
+          },
+          "coco80": {
+            "metrics/precision(B)": {
+              "reference": 0.007332902620635022,
+              "native": 0.007332902620635022,
+              "delta": 0.0
+            },
+            "metrics/recall(B)": {
+              "reference": 0.29808806390159304,
+              "native": 0.29808806390159304,
+              "delta": 0.0
+            },
+            "metrics/mAP50(B)": {
+              "reference": 0.007246582954079019,
+              "native": 0.007246582954079019,
+              "delta": 0.0
+            },
+            "metrics/mAP50-95(B)": {
+              "reference": 0.005821783391875513,
+              "native": 0.005821783391875513,
+              "delta": 0.0
+            },
+            "fitness": {
+              "reference": 0.005821783391875513,
+              "native": 0.005821783391875513,
+              "delta": 0.0
+            }
+          }
+        }
+      },
+      "SEG": {
+        "checkpoint_sha": "e646bc37979310db1e2771b39686bfb58f50de3e6ca65be1333a03f50241b5ec",
+        "images": 200,
+        "metrics": {
+          "best": {
+            "metrics/precision(B)": {
+              "reference": 0.007328970218178702,
+              "native": 0.007328970218178702,
+              "delta": 0.0
+            },
+            "metrics/recall(B)": {
+              "reference": 0.29808806390159304,
+              "native": 0.29808806390159304,
+              "delta": 0.0
+            },
+            "metrics/mAP50(B)": {
+              "reference": 0.007246568070284396,
+              "native": 0.007246568070284396,
+              "delta": 0.0
+            },
+            "metrics/mAP50-95(B)": {
+              "reference": 0.005821768803780573,
+              "native": 0.005821768803780573,
+              "delta": 0.0
+            },
+            "metrics/precision(M)": {
+              "reference": 0.001638956603498458,
+              "native": 0.001638956603498458,
+              "delta": 0.0
+            },
+            "metrics/recall(M)": {
+              "reference": 0.07970117064648424,
+              "native": 0.07970117064648424,
+              "delta": 0.0
+            },
+            "metrics/mAP50(M)": {
+              "reference": 0.0010631981047982077,
+              "native": 0.0010631981047982077,
+              "delta": 0.0
+            },
+            "metrics/mAP50-95(M)": {
+              "reference": 0.00044676422732388443,
+              "native": 0.00044676422732388443,
+              "delta": 0.0
+            },
+            "fitness": {
+              "reference": 0.006268533031104457,
+              "native": 0.006268533031104457,
+              "delta": 0.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "formal_tp_coco_val": {
+    "packages_present": {
+      "torch": false,
+      "torchvision": false,
+      "ultralytics": false
+    },
+    "stages": {
+      "TP": {
+        "checkpoint_sha": "f8aefb68f5a46137c1356f4ba1900a4d221e55b70775713484f71a93e1b7398f",
+        "images": 5000,
+        "metrics": {
+          "best": {
+            "metrics/precision(B)": {
+              "reference": 0.6580616079066373,
+              "native": 0.6580616874886689,
+              "delta": 7.958203163127564e-08
+            },
+            "metrics/recall(B)": {
+              "reference": 0.5337846748375905,
+              "native": 0.5337847245156324,
+              "delta": 4.967804190236791e-08
+            },
+            "metrics/mAP50(B)": {
+              "reference": 0.5734771240494604,
+              "native": 0.5734772016641239,
+              "delta": 7.761466347400159e-08
+            },
+            "metrics/mAP50-95(B)": {
+              "reference": 0.41245722751574193,
+              "native": 0.4124572383210019,
+              "delta": 1.0805259964552505e-08
+            },
+            "fitness": {
+              "reference": 0.41245722751574193,
+              "native": 0.4124572383210019,
+              "delta": 1.0805259964552505e-08
+            }
+          }
+        }
+      }
+    }
+  },
+  "prompts": {
+    "sample": {
+      "image": "coco/val2017/000000039769.jpg",
+      "classes": [
+        "tabby cat",
+        "sofa cushion",
+        "television remote"
+      ],
+      "detections": [
+        {
+          "label": "tabby cat",
+          "confidence": 0.3719662129878998,
+          "xyxy": [
+            12.35064697265625,
+            54.27471923828125,
+            318.61639404296875,
+            472.66943359375
+          ]
+        }
+      ]
+    },
+    "test_strings": [
+      "tabby cat",
+      "sofa cushion",
+      "television remote",
+      "红色雨伞",
+      "Crème &amp; sugar!",
+      "a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt a long prompt "
+    ],
+    "token_parity": {
+      "token_match": true,
+      "prompts": 6,
+      "max_abs": 2.682209014892578e-07,
+      "min_cos": 0.9999998211860657
+    },
+    "coco_plus_object": {
+      "shape": [
+        1,
+        81,
+        512
+      ],
+      "max_abs": 2.980232238769531e-07,
+      "min_cosine": 0.9999997615814209
+    },
+    "lvis_all_names": {
+      "shape": [
+        1,
+        1203,
+        512
+      ],
+      "max_abs": 3.2782554626464844e-07,
+      "min_cosine": 0.9999996423721313
+    }
+  },
+  "lvis_native_smoke": {
+    "engine": "jittor",
+    "images": 12,
+    "detections": 5219,
+    "best_sha": "f8aefb68f5a46137c1356f4ba1900a4d221e55b70775713484f71a93e1b7398f",
+    "manifest_sha": "5ffc36b339c96cdf536ca6d7c323e00bcf06f724e22a14fb366d4e73e1c5a11d",
+    "prediction_sha": "21a6440a8eb923480c606c4708bb718fd897801f4dded7a4ee2981e90012e4b6",
+    "protocol": {
+      "size": 640,
+      "batch": 1,
+      "classes": 1203,
+      "head": "one2one",
+      "nms": false,
+      "confidence": 0.001,
+      "max_det": 1000,
+      "detections_per_category": 10000,
+      "metrics": "LVIS Fixed AP bbox",
+      "paper_e2e_ap": 29.9
+    },
+    "metrics": {
+      "AP": 27.737515117937832,
+      "AP50": 38.0487490020347,
+      "AP75": 27.01812890748551,
+      "APs": 8.893503585263407,
+      "APm": 31.404608086032205,
+      "APl": 48.055645750014556,
+      "APr": 25.247524752475247,
+      "APc": 0.0,
+      "APf": 28.68212466429409
+    },
+    "metric_scale": "0-100",
+    "eligible_detections": 757,
+    "categories_below_fixed_cap": 1203,
+    "author_sort_cross_checked": true
+  },
+  "lvis_native_full": {
+    "engine": "jittor",
+    "images": 4809,
+    "detections": 1800919,
+    "best_sha": "f8aefb68f5a46137c1356f4ba1900a4d221e55b70775713484f71a93e1b7398f",
+    "manifest_sha": "5ffc36b339c96cdf536ca6d7c323e00bcf06f724e22a14fb366d4e73e1c5a11d",
+    "prediction_sha": "c89343a0d49bd1148f5c14a7cc81e21761289794f541f993f844a8c67f2c441e",
+    "protocol": {
+      "size": 640,
+      "batch": 1,
+      "classes": 1203,
+      "head": "one2one",
+      "nms": false,
+      "confidence": 0.001,
+      "max_det": 1000,
+      "detections_per_category": 10000,
+      "metrics": "LVIS Fixed AP bbox",
+      "paper_e2e_ap": 29.9
+    },
+    "metrics": {
+      "AP": 12.849377246171478,
+      "AP50": 17.033880123153914,
+      "AP75": 13.728053809144726,
+      "APs": 8.92215003871594,
+      "APm": 17.172821551757757,
+      "APl": 28.74990978653366,
+      "APr": 10.19508389531839,
+      "APc": 10.496861683177624,
+      "APf": 15.413434839468632
+    },
+    "metric_scale": "0-100",
+    "eligible_detections": 183384,
+    "categories_below_fixed_cap": 1173,
+    "author_sort_cross_checked": false
+  },
+  "lvis_same_checkpoint": {
+    "AP": {
+      "legacy": 12.849376266031953,
+      "native": 12.849377246171478,
+      "delta": 9.801395250974565e-07
+    },
+    "AP50": {
+      "legacy": 17.033879630541282,
+      "native": 17.033880123153914,
+      "delta": 4.926126315751844e-07
+    },
+    "AP75": {
+      "legacy": 13.72805034040725,
+      "native": 13.728053809144726,
+      "delta": 3.4687374750319577e-06
+    },
+    "APs": {
+      "legacy": 8.922151026533994,
+      "native": 8.92215003871594,
+      "delta": -9.878180549094395e-07
+    },
+    "APm": {
+      "legacy": 17.172820889187644,
+      "native": 17.172821551757757,
+      "delta": 6.625701125528849e-07
+    },
+    "APl": {
+      "legacy": 28.749907176830387,
+      "native": 28.74990978653366,
+      "delta": 2.609703273037667e-06
+    },
+    "APr": {
+      "legacy": 10.19508389531839,
+      "native": 10.19508389531839,
+      "delta": 0.0
+    },
+    "APc": {
+      "legacy": 10.496861683177624,
+      "native": 10.496861683177624,
+      "delta": 0.0
+    },
+    "APf": {
+      "legacy": 15.41343281367897,
+      "native": 15.413434839468632,
+      "delta": 2.0257896622410954e-06
+    }
+  },
+  "lvis_pytorch_baseline": {
+    "best_sha": "c5ed64cb9fc371436c90a95ba607f0971e40519cee28d72b74f4653a467f0bdc",
+    "images": 4809,
+    "metrics": {
+      "AP": 13.273001549959526,
+      "AP50": 17.43004558465964,
+      "AP75": 14.07796839306302,
+      "APs": 9.098242762106674,
+      "APm": 16.808230537676444,
+      "APl": 28.85008321350867,
+      "APr": 11.282425597747494,
+      "APc": 11.309428644933588,
+      "APf": 15.37267499183301
+    }
+  }
+}

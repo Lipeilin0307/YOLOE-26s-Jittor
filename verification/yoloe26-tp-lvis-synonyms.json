@@ -1,0 +1,149 @@
+{
+  "experiment": "YOLOE-26s TP on COCO20k, LVIS minival fixed box AP; first name vs. distinct within-class synonym mean",
+  "protocol": {
+    "size": 640,
+    "batch": 1,
+    "classes": 1203,
+    "head": "one2one",
+    "nms": false,
+    "confidence": 0.001,
+    "max_det": 1000,
+    "detections_per_category": 10000,
+    "metrics": "LVIS Fixed AP bbox",
+    "paper_e2e_ap": 29.9
+  },
+  "images": 4809,
+  "checkpoint": "independently trained standalone Jittor, previous 30-epoch TP best",
+  "checkpoint_sha256": "7dd5d47d350edca87e32a1867ded319ae37080c150e61e53e2222a5f1b48b81d",
+  "manifest_sha256": "5ffc36b339c96cdf536ca6d7c323e00bcf06f724e22a14fb366d4e73e1c5a11d",
+  "training": false,
+  "device": "cpu",
+  "text": {
+    "method": "L2-normalize each distinct raw MobileCLIP2-B vector, take its class mean, then L2-normalize",
+    "device": "cpu",
+    "batch_size": 16,
+    "manifest_sha": "5ffc36b339c96cdf536ca6d7c323e00bcf06f724e22a14fb366d4e73e1c5a11d",
+    "vocab_sha": "af2b30726df6bc3019dfef2b5b1d185b352fe2474e10f620d8e851b7e52cc291",
+    "baseline_sha": "c1fa5fe62b01aaefa7d3a21947233fec0bef4a67e0916ea8a970fbb6cd505386",
+    "encoder_sha": "35d7f213e4d75f38514e4656ad3cb91158bd33e3805d8ac349f23b186f66982f",
+    "bpe_sha": "924691ac288e54409236115652ad4aa250f48203de50a9e4722a6ecd48d6804a",
+    "classes": 1203,
+    "name_entries": 1983,
+    "distinct_within_class_entries": 1982,
+    "unique_extra_names_encoded": 778,
+    "pooled_classes": 462,
+    "unchanged_single_name_classes": 741,
+    "single_name_vectors_bit_identical": true,
+    "duplicates_removed": [
+      {
+        "lvis_id": 199,
+        "names": [
+          "canister",
+          "canister"
+        ]
+      }
+    ],
+    "text_sha": "1578533483e4d5c993f9ed95f430697f7d90cc70a687250527ecbcb7f2e232db"
+  },
+  "detector_source_sha256": {
+    "lvis_tp.py": "a3059b0b0fbd4281a534420b17701c1a3bb668c59cf22cbff108ae8bc447e329",
+    "model.py": "90420e4d597b026b289bf58ac714cf9d68a253caff0b31cd64ae4b031b5fe96c",
+    "objective.py": "7cad15d084023f5a6cf34e5590043a6eade42b27c14769e6abd36b4b7e813379"
+  },
+  "detections": {
+    "first_name": 1836324,
+    "pooled": 1690262
+  },
+  "prediction_sha256": {
+    "first_name": "da389b21ae0df2cc6f7ec4b13e292773be2573eb39db340488ad2618ae9e742c",
+    "pooled": "2d8928403397b4211af60e0d02b6e1d45fee870fe2fd26624498bc0535ca28f8"
+  },
+  "metrics": {
+    "AP": {
+      "first_name": 13.283704671805918,
+      "pooled": 13.005187858886561,
+      "delta": -0.2785168129193565
+    },
+    "AP50": {
+      "first_name": 17.675011554453178,
+      "pooled": 17.368365090734283,
+      "delta": -0.30664646371889503
+    },
+    "AP75": {
+      "first_name": 14.175218713026098,
+      "pooled": 13.841458901787624,
+      "delta": -0.3337598112384743
+    },
+    "APs": {
+      "first_name": 8.903965980894537,
+      "pooled": 8.862453730750634,
+      "delta": -0.04151225014390292
+    },
+    "APm": {
+      "first_name": 17.32075974810754,
+      "pooled": 17.247796025882018,
+      "delta": -0.0729637222255235
+    },
+    "APl": {
+      "first_name": 28.8101989562014,
+      "pooled": 28.847911859844043,
+      "delta": 0.03771290364264246
+    },
+    "APr": {
+      "first_name": 8.79409141080221,
+      "pooled": 8.60147306724393,
+      "delta": -0.19261834355828
+    },
+    "APc": {
+      "first_name": 11.948305877499052,
+      "pooled": 11.363324471396483,
+      "delta": -0.5849814061025693
+    },
+    "APf": {
+      "first_name": 15.275955346114722,
+      "pooled": 15.25378144268879,
+      "delta": -0.02217390342593184
+    }
+  },
+  "groups": {
+    "all": {
+      "vocabulary_categories": 1203,
+      "evaluated_categories": 804,
+      "baseline_ap": 13.283704671805916,
+      "pooled_ap": 13.00518785888657,
+      "delta_ap": -0.2785168129193458,
+      "improved": 106,
+      "declined": 120,
+      "tied": 578
+    },
+    "multiple_names": {
+      "vocabulary_categories": 462,
+      "evaluated_categories": 315,
+      "baseline_ap": 12.496806581484293,
+      "pooled_ap": 11.775211001007293,
+      "delta_ap": -0.7215955804770005,
+      "improved": 75,
+      "declined": 80,
+      "tied": 160
+    },
+    "single_name": {
+      "vocabulary_categories": 741,
+      "evaluated_categories": 489,
+      "baseline_ap": 13.790602214651132,
+      "pooled_ap": 13.797504239729049,
+      "delta_ap": 0.006902025077916818,
+      "improved": 31,
+      "declined": 40,
+      "tied": 418
+    }
+  },
+  "single_name_prediction_sets": {
+    "images_at_max_det_in_either_arm": 488,
+    "images_with_different_single_name_rows": 478,
+    "changed_images_below_max_det_in_both_arms": 0
+  },
+  "smoke": {
+    "images": 12,
+    "reference_scoring_crosschecked": true
+  }
+}

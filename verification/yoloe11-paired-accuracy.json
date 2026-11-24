@@ -1,0 +1,409 @@
+{
+  "model": "YOLOE-11s text-prompt bbox detection, local CPU, 1 epoch, COCO 200 train + 200 validation",
+  "seeds": [
+    20261121,
+    20261122,
+    20261123
+  ],
+  "rates": [
+    "0.0005",
+    "0.00005"
+  ],
+  "criterion": "Every paired raw mAP50-95 gap <= 1 AP point; all detector groups updated",
+  "optimizer": "SGD, momentum .9, global norm clip 10, batch 4, 320px, no EMA/warmup",
+  "units": "AP points on a 0-100 scale; delta = Jittor - PyTorch",
+  "summary": {
+    "0.0005": {
+      "pytorch_mean_AP": 24.720164386260414,
+      "jittor_mean_AP": 21.05853850443743,
+      "mean_signed_difference": -3.6616258818229865,
+      "paired_difference_sample_sd": 7.54329456159895,
+      "mean_abs_difference": 5.987050815699077,
+      "max_abs_difference": 11.544866444440796,
+      "pairs_within_one_AP": 0
+    },
+    "0.00005": {
+      "pytorch_mean_AP": 32.60453649135682,
+      "jittor_mean_AP": 32.557771451650545,
+      "mean_signed_difference": -0.04676503970627147,
+      "paired_difference_sample_sd": 0.5065914071130507,
+      "mean_abs_difference": 0.3685416392809948,
+      "max_abs_difference": 0.5269163303990183,
+      "pairs_within_one_AP": 3
+    }
+  },
+  "runs": [
+    {
+      "seed": 20261121,
+      "lr": "0.0005",
+      "archived_baseline": true,
+      "train_sha": "2382f490d72bab60d17e56827988f250548e443d78775acaf0bfa2e2d4cac4a1",
+      "val_sha": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+      "pytorch": {
+        "mAP50": 42.528474864751864,
+        "mAP50-95": 30.119819023758826
+      },
+      "jittor": {
+        "mAP50": 27.14262868006659,
+        "mAP50-95": 18.57495257931803
+      },
+      "delta_AP": -11.544866444440796,
+      "no_SGD_BN_only": {
+        "mAP50": 47.338238580066715,
+        "mAP50-95": 34.249098820376624
+      },
+      "initial": {
+        "mAP50": 48.475569947926545,
+        "mAP50-95": 35.07715206977492
+      },
+      "jittor_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.24238477060021674,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "pytorch_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.2410101072389678,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "mean_loss": {
+        "jittor": {
+          "box": 1.354271639585495,
+          "cls": 1.8509099197387695,
+          "dfl": 1.2027637016773225
+        },
+        "pytorch": {
+          "box": 1.3278450334072114,
+          "cls": 1.8274095177650451,
+          "dfl": 1.1933767867088318
+        }
+      },
+      "checkpoints": {
+        "jittor": "9b3a7e1c62043f840ca3decafe6d4480ab03f69940e10a26c2964f2f1f95380b",
+        "pytorch": "c88a18b9dd2b9e269768bcd5b53c57e00593f1ac02e5d53b89a6c4d957833806"
+      }
+    },
+    {
+      "seed": 20261121,
+      "lr": "0.00005",
+      "archived_baseline": false,
+      "train_sha": "2382f490d72bab60d17e56827988f250548e443d78775acaf0bfa2e2d4cac4a1",
+      "val_sha": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+      "pytorch": {
+        "mAP50": 46.341827327784806,
+        "mAP50-95": 33.199568672282595
+      },
+      "jittor": {
+        "mAP50": 46.41697898734562,
+        "mAP50-95": 33.68223357164468
+      },
+      "delta_AP": 0.482664899362085,
+      "no_SGD_BN_only": {
+        "mAP50": 47.338238580066715,
+        "mAP50-95": 34.249098820376624
+      },
+      "initial": {
+        "mAP50": 48.475569947926545,
+        "mAP50-95": 35.07715206977492
+      },
+      "jittor_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.025275640226108023,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "pytorch_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.027120586726426914,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "mean_loss": {
+        "jittor": {
+          "box": 1.2833868896961211,
+          "cls": 1.774625859260559,
+          "dfl": 1.1568715691566467
+        },
+        "pytorch": {
+          "box": 1.279978551864624,
+          "cls": 1.789850525856018,
+          "dfl": 1.1567738997936248
+        }
+      },
+      "checkpoints": {
+        "jittor": "b194690236c070ae38c5c641e55287fb4b36efd51415447f662a9dcdd93627ea",
+        "pytorch": "041e5c2c50d795efe9e01171aebf96878cfcc21b6f04966856e1b06d9579899a"
+      }
+    },
+    {
+      "seed": 20261122,
+      "lr": "0.0005",
+      "archived_baseline": false,
+      "train_sha": "7e4da854253c6306d7dce0d7d00521393bb23418e089b88c0c38f74071f647fe",
+      "val_sha": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+      "pytorch": {
+        "mAP50": 38.35993633519661,
+        "mAP50-95": 27.022192126331756
+      },
+      "jittor": {
+        "mAP50": 33.500187487779,
+        "mAP50-95": 24.094043524489457
+      },
+      "delta_AP": -2.928148601842299,
+      "no_SGD_BN_only": {
+        "mAP50": 47.350347102384085,
+        "mAP50-95": 34.28751870508396
+      },
+      "initial": {
+        "mAP50": 48.475569947926545,
+        "mAP50-95": 35.07715206977492
+      },
+      "jittor_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.22912951033950196,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "pytorch_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.24259703733406418,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "mean_loss": {
+        "jittor": {
+          "box": 1.2917961746454238,
+          "cls": 1.7806041312217713,
+          "dfl": 1.151281201839447
+        },
+        "pytorch": {
+          "box": 1.315266637802124,
+          "cls": 1.817766810655594,
+          "dfl": 1.1754490220546723
+        }
+      },
+      "checkpoints": {
+        "jittor": "e5be77f46ac6eb61014ff98ef03386107a12d4ea097c8dcec80b1b4255fe3b55",
+        "pytorch": "53acda5aacfcf2c188660064b2792103102b228181404aebcbda8691ae8cc618"
+      }
+    },
+    {
+      "seed": 20261122,
+      "lr": "0.00005",
+      "archived_baseline": false,
+      "train_sha": "7e4da854253c6306d7dce0d7d00521393bb23418e089b88c0c38f74071f647fe",
+      "val_sha": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+      "pytorch": {
+        "mAP50": 45.78637922974042,
+        "mAP50-95": 32.89613034015319
+      },
+      "jittor": {
+        "mAP50": 45.353600657520424,
+        "mAP50-95": 32.369214009754174
+      },
+      "delta_AP": -0.5269163303990183,
+      "no_SGD_BN_only": {
+        "mAP50": 47.350347102384085,
+        "mAP50-95": 34.28751870508396
+      },
+      "initial": {
+        "mAP50": 48.475569947926545,
+        "mAP50-95": 35.07715206977492
+      },
+      "jittor_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.028229491914031075,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "pytorch_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.029392347904978643,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "mean_loss": {
+        "jittor": {
+          "box": 1.2892185133695602,
+          "cls": 1.7426902651786804,
+          "dfl": 1.1447184407711029
+        },
+        "pytorch": {
+          "box": 1.2768276488780976,
+          "cls": 1.7396876120567322,
+          "dfl": 1.1386196625232696
+        }
+      },
+      "checkpoints": {
+        "jittor": "88110d9e25b6f3a4dcbef1a32d0a1630e7b65e9b06376baa841b2815ee2cdfed",
+        "pytorch": "90c8cf43cccfc54c2a6d1b48c730914623b18fea643bf05879fd3b31c28d5e6f"
+      }
+    },
+    {
+      "seed": 20261123,
+      "lr": "0.0005",
+      "archived_baseline": false,
+      "train_sha": "6da0d5619f626aa159d0a485eb7fa2ddf3a86f1d9953cc1a192e16573b2fb7fe",
+      "val_sha": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+      "pytorch": {
+        "mAP50": 24.262565234406985,
+        "mAP50-95": 17.018482008690665
+      },
+      "jittor": {
+        "mAP50": 30.86533925984485,
+        "mAP50-95": 20.5066194095048
+      },
+      "delta_AP": 3.4881374008141357,
+      "no_SGD_BN_only": {
+        "mAP50": 47.269495158575566,
+        "mAP50-95": 34.03403627780938
+      },
+      "initial": {
+        "mAP50": 48.475569947926545,
+        "mAP50-95": 35.07715206977492
+      },
+      "jittor_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.26098891521731254,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "pytorch_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.26351439754648015,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "mean_loss": {
+        "jittor": {
+          "box": 1.33170228600502,
+          "cls": 1.9138818669319153,
+          "dfl": 1.1788295924663543
+        },
+        "pytorch": {
+          "box": 1.3564385318756103,
+          "cls": 1.923383014202118,
+          "dfl": 1.1804072785377502
+        }
+      },
+      "checkpoints": {
+        "jittor": "f7b289d646e29fe32cb2e8a4b2a66beb2326714fed6f47f5d2857ea886560719",
+        "pytorch": "aef5ec94f5c9581686e2968bf90025c27ab43a6220a4d58be62c14e01b2b60c9"
+      }
+    },
+    {
+      "seed": 20261123,
+      "lr": "0.00005",
+      "archived_baseline": false,
+      "train_sha": "6da0d5619f626aa159d0a485eb7fa2ddf3a86f1d9953cc1a192e16573b2fb7fe",
+      "val_sha": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+      "pytorch": {
+        "mAP50": 44.857944123016615,
+        "mAP50-95": 31.717910461634663
+      },
+      "jittor": {
+        "mAP50": 45.01724114505609,
+        "mAP50-95": 31.62186677355278
+      },
+      "delta_AP": -0.09604368808188113,
+      "no_SGD_BN_only": {
+        "mAP50": 47.269495158575566,
+        "mAP50-95": 34.03403627780938
+      },
+      "initial": {
+        "mAP50": 48.475569947926545,
+        "mAP50-95": 35.07715206977492
+      },
+      "jittor_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.026842068249420994,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "pytorch_update": {
+        "changed_tensors": 266,
+        "parameter_delta_l2": 0.028101247727586653,
+        "changed_groups": [
+          "cv2",
+          "cv3",
+          "cv4",
+          "image",
+          "reprta"
+        ]
+      },
+      "mean_loss": {
+        "jittor": {
+          "box": 1.2795889484882355,
+          "cls": 1.8455749714374543,
+          "dfl": 1.1576474058628081
+        },
+        "pytorch": {
+          "box": 1.2784849631786346,
+          "cls": 1.8606863462924956,
+          "dfl": 1.1557933211326599
+        }
+      },
+      "checkpoints": {
+        "jittor": "e8a86da1be17ee5b9bb38c52ebf724fa6a039d3b6cca5ffbb2d6e6ca22ebb4c7",
+        "pytorch": "5d206d4db12354fc6c25e2304bfd3dbf6c0d89c50b77d7349d5d1f0c55e3b505"
+      }
+    }
+  ]
+}

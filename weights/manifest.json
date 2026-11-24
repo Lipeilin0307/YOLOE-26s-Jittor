@@ -1,0 +1,9 @@
+{
+  "det": {"path":"init/det.npz","sha256":"6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416"},
+  "seg_init": {"path":"init/seg.npz","sha256":"e1113357bb8cb70bb4da0757db6c1fb517543ef175e15d7f7fcae64a7bbeef01"},
+  "TP": {"path":"weights/tp-coco20k.npz","sha256":"20b0cd4feec3c9aadc4fa346095be951ff5e843e513d8fbb8dca0e17a5242cad"},
+  "VP": {"path":"weights/vp-coco20k.npz","sha256":"cd8398b76409692f3c0a4e826a789a021605df9b10e888bea7fc9922f91f871c"},
+  "PF": {"path":"weights/pf-coco20k.npz","sha256":"03222ee421bf3013fe49b4e07f0e77335852c1a1a8d27105497d2bab17d1f569"},
+  "SEG": {"path":"weights/seg-coco20k.npz","sha256":"434477378f383e6adb9a62580a696008c293350eaa445cab520e198eec650274"},
+  "text": {"path":"mobileclip2_b.ts","sha256":"35d7f213e4d75f38514e4656ad3cb91158bd33e3805d8ac349f23b186f66982f","url":"https://github.com/ultralytics/assets/releases/download/v8.4.0/mobileclip2_b.ts"}
+}

@@ -1,0 +1,42 @@
+{
+  "stage": "SEG",
+  "device": "local WSL CPU",
+  "experiment": "Native 200-image regression after the optimizer and CPU training fixes",
+  "initialization": "Historical COCO20k Jittor TP best and project segmentation initialization",
+  "train_images": 200,
+  "validation_images": 200,
+  "train_manifest_sha256": "8b90422e1cf6e12e05d07f8b0648d9750dcbdef4a6a3588e570b52c85c3f9f8f",
+  "validation_manifest_sha256": "741fd1c51da7d7aa19c734a662e1d6778590bf2bde0120821a73c9f95c58e9f3",
+  "batch": 2,
+  "imgsz": 320,
+  "epochs": 1,
+  "optimizer_steps": 100,
+  "updated_trainable_tensors": 68,
+  "native_train_loss_mean": {
+    "cls": 1.3206172870099544,
+    "box": 1.3335463139414787,
+    "l1": 0.010052993593271822,
+    "seg": 5.266899173259735
+  },
+  "parent_sha256": "f8aefb68f5a46137c1356f4ba1900a4d221e55b70775713484f71a93e1b7398f",
+  "best_sha256": "609c1b46a21934864c659a6f7c4aa16e2a007705a524f5d16433a4bcb59ff5f4",
+  "last_sha256": "609c1b46a21934864c659a6f7c4aa16e2a007705a524f5d16433a4bcb59ff5f4",
+  "reloaded_metrics": {
+    "metrics/precision(B)": 0.5888086298506563,
+    "metrics/recall(B)": 0.5141433599989487,
+    "metrics/mAP50(B)": 0.5548742208927674,
+    "metrics/mAP50-95(B)": 0.41806604628319366,
+    "metrics/precision(M)": 0.4809423895104447,
+    "metrics/recall(M)": 0.3514978345813377,
+    "metrics/mAP50(M)": 0.3625665948983834,
+    "metrics/mAP50-95(M)": 0.12358304859655289,
+    "fitness": 0.5416490948797466
+  },
+  "independent_fresh_process_reload_matches": true,
+  "code_sha256": {
+    "YOLOE-26s-Jittor/optimizer.py": "0bd1e2a5320f3ad3b2acaa3da395cd321d7f5766348d4f8cec0ad5b0c1fb3680",
+    "YOLOE-26s-Jittor/train.py": "4d881397a4ae8de1bdcc9df1f56c874bdc97e035d962244f93c503d589aa410d",
+    "YOLOE-26s-Jittor/model.py": "baf0e36f7c555605c3a6478fd4ed7b870acd3fd3a6a9d4a9270e6154bb5900cd",
+    "YOLOE-26s-Jittor/objective.py": "7cad15d084023f5a6cf34e5590043a6eade42b27c14769e6abd36b4b7e813379"
+  }
+}

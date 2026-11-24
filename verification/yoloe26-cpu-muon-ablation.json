@@ -1,0 +1,60 @@
+{
+  "model": "YOLOE-26s TP, 394 trainable tensors",
+  "device": "WSL CPU, PyTorch 2.7.1, Ultralytics 8.4.216, Jittor 1.3.11.0",
+  "batch": "First two images and their per-image text prompts from the fixed COCO training replay, downsampled to 160 x 160. Same training initialization, no warmup, one MuSGD update.",
+  "batch_sha256": "a74b6d202accf35ff10a983ef85f403d85cd2b5ab05b03edcc71dc4b3e65d3ae",
+  "init_sha256": "6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416",
+  "measurement": "L2(Jittor parameter increment - PyTorch parameter increment) / L2(PyTorch parameter increment), across all trainable parameters. In the fixed-gradient control, all 394 native unclipped gradient tensors are replaced by the corresponding PyTorch tensors before the native optimizer runs.",
+  "reference_parameter_increment_L2": 0.04230421265217672,
+  "cumulative_changes": [
+    {
+      "change": "Baseline optimizer, using the corrected CPU BN and identical input preprocessing for all rows",
+      "own_gradients": 0.10085598780437376,
+      "fixed_official_gradients": 0.10083502922790075
+    },
+    {
+      "change": "Use nearest-even BF16, including the normalization denominator",
+      "own_gradients": 0.027602212046766484,
+      "fixed_official_gradients": 0.02905328981200422
+    },
+    {
+      "change": "Normalize before transposition and select left/right Gram orientation from the official MuSGD shape buckets",
+      "own_gradients": 0.02622043733435035,
+      "fixed_official_gradients": 0.02792965139909267
+    },
+    {
+      "change": "Accumulate the global CPU gradient norm in float64 before computing the FP32 clip coefficient",
+      "own_gradients": 0.018160779514287052,
+      "fixed_official_gradients": 0.011350636185091256,
+      "own_gradients_max_absolute_update_error": 0.00004852563142776489,
+      "fixed_gradients_max_absolute_update_error": 0.00003131106495857239
+    }
+  ],
+  "diagnostics": {
+    "global_clip_norm": {
+      "pytorch": 220.9669952392578,
+      "fp64_sum_of_squares_reference": 220.9681243646164,
+      "old_float32_jittor_relative_error": 0.00010102689034742962
+    },
+    "identical_input_matrix_control": {
+      "layer": "model.23.reprta.m.w3.weight",
+      "shape": [512, 1024],
+      "comparison": "Independent single-matrix replay of PyTorch's BF16 Newton-Schulz versus Jittor FP32 GEMMs rounded to BF16 at the same boundaries. Start both from identical official momentum input; this isolates arithmetic within the orthogonalizer.",
+      "bf16_input_differences": 0,
+      "bf16_normalization_denominator_differences": 0,
+      "normalized_matrix_differences": 0,
+      "first_gram_different_elements": 12,
+      "first_gram_elements": 262144,
+      "first_gram_relative_L2": 0.000018645491184912512,
+      "fifth_iterate_relative_L2": 0.010081484276651712,
+      "scope": "Shows a residual due to CPU matrix-product arithmetic and iterative rounding for this matrix. Does not attribute every whole-model discrepancy to this mechanism."
+    }
+  },
+  "final_all_groups": "yoloe26-cpu-tp-step.json",
+  "fixed_prediction_gradient_and_loss_tests": "yoloe26-cpu-math.json",
+  "reproduce_final": [
+    "Run check_tp_step.py torch with --init, --batch and --fixture to generate the official gradient/update oracle.",
+    "Run check_tp_step.py jittor with the same paths and --report for the native end-to-end step.",
+    "Run check_tp_step.py fixed-gradients with the same paths and report to append the optimizer-only control."
+  ]
+}

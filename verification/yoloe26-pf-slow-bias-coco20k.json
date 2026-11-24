@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "best": {
+      "jittor_corrected": 45.046276916899416,
+      "jittor_previous": 41.384717300278226,
+      "pytorch": 45.247783726114754,
+      "change_vs_previous": 3.66155961662119,
+      "gap_vs_pytorch": -0.20150680921533848
+    },
+    "coco80": {
+      "jittor_corrected": 41.116651599702074,
+      "jittor_previous": 41.120226501672505,
+      "pytorch": 41.194726108893505,
+      "change_vs_previous": -0.003574901970431199,
+      "gap_vs_pytorch": -0.07807450919143122
+    }
+  },
+  "units": "bbox AP50-95 points",
+  "best_epoch": 4,
+  "epoch1_ap": 44.91659412740277,
+  "epochs": 10,
+  "steps": 4497,
+  "best_sha256": "03222ee421bf3013fe49b4e07f0e77335852c1a1a8d27105497d2bab17d1f569",
+  "train_sha256": "0791b2269c1f041746d159571b75b57f458bff00041d7d34b0b748dd6a17fa45",
+  "val_sha256": "612097d209d870b260f9b4cb9c5ccdc32586da617ccf0f25c0627e60f8877285",
+  "parent_sha256": "20b0cd4feec3c9aadc4fa346095be951ff5e843e513d8fbb8dca0e17a5242cad"
+}

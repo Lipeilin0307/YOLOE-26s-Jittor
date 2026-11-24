@@ -1,0 +1,295 @@
+{
+  "scope": "YOLOE-11s text-prompt bbox detection; local CPU; one seed. AP in percentage points, epoch losses are means of gain-scaled loss items before the batch multiplier.",
+  "configuration": {
+    "ultralytics": "8.4.216",
+    "torch": "2.7.1+cu128",
+    "device": "cpu",
+    "size": 320,
+    "batch": 4,
+    "seed": 20261121,
+    "lr": 0.0005,
+    "optimizer": "SGD",
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "clip_grad_norm": 10.0,
+    "gains": {
+      "box": 7.5,
+      "cls": 0.5,
+      "dfl": 1.5
+    },
+    "warmup": false,
+    "ema": false,
+    "steps": 50,
+    "replay": {
+      "train": {
+        "images": 200,
+        "steps": 50,
+        "arrays_sha256": "2382f490d72bab60d17e56827988f250548e443d78775acaf0bfa2e2d4cac4a1",
+        "manifest_sha256": "8b90422e1cf6e12e05d07f8b0648d9750dcbdef4a6a3588e570b52c85c3f9f8f"
+      },
+      "val": {
+        "images": 200,
+        "steps": 50,
+        "arrays_sha256": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+        "manifest_sha256": "741fd1c51da7d7aa19c734a662e1d6778590bf2bde0120821a73c9f95c58e9f3"
+      }
+    }
+  },
+  "checkpoint_sha256": {
+    "pytorch": "c88a18b9dd2b9e269768bcd5b53c57e00593f1ac02e5d53b89a6c4d957833806",
+    "jittor": "affee066257f54b293bdfaf0df36f3832b5b8ff0c13f59c0aa809e56e8c5ba40"
+  },
+  "epoch_mean_loss": {
+    "pytorch": {
+      "box": 1.3278450334072114,
+      "cls": 1.8274095177650451,
+      "dfl": 1.1933767867088318
+    },
+    "jittor": {
+      "box": 1.3497290766239167,
+      "cls": 1.8676456427574157,
+      "dfl": 1.2017997181415558
+    }
+  },
+  "matched_logged_steps": [
+    {
+      "step": 1,
+      "jittor": {
+        "box": 0.8882399797439575,
+        "cls": 1.5093739032745361,
+        "dfl": 0.9912667274475098
+      },
+      "pytorch": {
+        "box": 0.8883072137832642,
+        "cls": 1.5097311735153198,
+        "dfl": 0.9912922382354736
+      }
+    },
+    {
+      "step": 2,
+      "jittor": {
+        "box": 0.9794752597808838,
+        "cls": 2.6607227325439453,
+        "dfl": 1.052725911140442
+      },
+      "pytorch": {
+        "box": 0.9809487462043762,
+        "cls": 2.6627347469329834,
+        "dfl": 1.0537109375
+      }
+    },
+    {
+      "step": 10,
+      "jittor": {
+        "box": 1.0761189460754395,
+        "cls": 2.1094541549682617,
+        "dfl": 1.0938535928726196
+      },
+      "pytorch": {
+        "box": 1.094462275505066,
+        "cls": 2.172947645187378,
+        "dfl": 1.1089916229248047
+      }
+    },
+    {
+      "step": 20,
+      "jittor": {
+        "box": 1.3047212362289429,
+        "cls": 2.0403921604156494,
+        "dfl": 1.2407268285751343
+      },
+      "pytorch": {
+        "box": 1.5184141397476196,
+        "cls": 2.3478035926818848,
+        "dfl": 1.3345035314559937
+      }
+    },
+    {
+      "step": 30,
+      "jittor": {
+        "box": 1.5253769159317017,
+        "cls": 1.7528637647628784,
+        "dfl": 1.1511950492858887
+      },
+      "pytorch": {
+        "box": 1.4371477365493774,
+        "cls": 1.8086092472076416,
+        "dfl": 1.1434422731399536
+      }
+    },
+    {
+      "step": 40,
+      "jittor": {
+        "box": 1.5142934322357178,
+        "cls": 1.6332781314849854,
+        "dfl": 1.5126957893371582
+      },
+      "pytorch": {
+        "box": 1.6132830381393433,
+        "cls": 1.4855326414108276,
+        "dfl": 1.5005097389221191
+      }
+    },
+    {
+      "step": 50,
+      "jittor": {
+        "box": 1.989632248878479,
+        "cls": 2.1741185188293457,
+        "dfl": 1.3657386302947998
+      },
+      "pytorch": {
+        "box": 1.7688930034637451,
+        "cls": 2.1307780742645264,
+        "dfl": 1.2461318969726562
+      }
+    }
+  ],
+  "original_validation": {
+    "pytorch_initial": {
+      "mAP50": 48.475569947926545,
+      "mAP50-95": 35.07715206977492
+    },
+    "jittor_initial": {
+      "mAP50": 48.47558822509042,
+      "mAP50-95": 35.077180060897355
+    },
+    "pytorch_epoch1": {
+      "mAP50": 42.528474864751864,
+      "mAP50-95": 30.119819023758826
+    },
+    "jittor_epoch1": {
+      "mAP50": 32.92462988193907,
+      "mAP50-95": 23.193200257460187
+    }
+  },
+  "first_batch_comparison": {
+    "first_batch_output": {
+      "boxes": {
+        "native_l2": 5956.957572250731,
+        "ref_l2": 5956.986902123105,
+        "relative_l2": 0.0002713580312868266,
+        "cosine": 0.9999999631942998
+      },
+      "scores": {
+        "native_l2": 15124.08622017007,
+        "ref_l2": 15124.081259460336,
+        "relative_l2": 0.00010812649408816147,
+        "cosine": 0.999999994154303
+      }
+    },
+    "first_batch_gradients": {
+      "backbone_neck": {
+        "native_l2": 248.65520153011852,
+        "ref_l2": 248.78832298525583,
+        "relative_l2": 0.011203756240132538,
+        "cosine": 0.9999373475539052
+      },
+      "cv2": {
+        "native_l2": 15.348487388911735,
+        "ref_l2": 15.350204959321307,
+        "relative_l2": 0.0004225270034139075,
+        "cosine": 0.9999999169861239
+      },
+      "cv3": {
+        "native_l2": 24.983443988797756,
+        "ref_l2": 24.984691648631056,
+        "relative_l2": 0.0006813651391918417,
+        "cosine": 0.9999997691060931
+      },
+      "cv4": {
+        "native_l2": 6.896069881326156,
+        "ref_l2": 6.894942428431411,
+        "relative_l2": 0.0002109212070125041,
+        "cosine": 0.9999999911267763
+      },
+      "reprta": {
+        "native_l2": 19.575833900618054,
+        "ref_l2": 19.576774361592133,
+        "relative_l2": 0.00027424952136834315,
+        "cosine": 0.9999999635457479
+      }
+    },
+    "global_gradient": {
+      "native_l2": 251.23679435816234,
+      "ref_l2": 251.36881984124923,
+      "relative_l2": 0.01108899985643562,
+      "cosine": 0.9999386227354103
+    },
+    "running_stats_first_step": {
+      "running_mean": {
+        "native_l2": 286.22623830250933,
+        "ref_l2": 286.2262497915649,
+        "relative_l2": 3.7014349244425763e-07,
+        "cosine": 0.9999999999999328
+      },
+      "running_var": {
+        "native_l2": 323.8585840332641,
+        "ref_l2": 323.8586628937894,
+        "relative_l2": 1.9025460621218173e-06,
+        "cosine": 0.9999999999982202
+      }
+    },
+    "native_loss": {
+      "box": 0.8882399797439575,
+      "cls": 1.5093739032745361,
+      "dfl": 0.9912667274475098
+    },
+    "identical_head_outputs": {
+      "reference_loss": {
+        "box": 0.8883072137832642,
+        "cls": 1.5097311735153198,
+        "dfl": 0.9912922382354736
+      },
+      "native_loss": {
+        "box": 0.8883063793182373,
+        "cls": 1.5094677209854126,
+        "dfl": 0.9912920594215393
+      },
+      "gradients": {
+        "boxes": {
+          "native_l2": 0.4092913935805208,
+          "ref_l2": 0.4092914061182363,
+          "relative_l2": 2.5429120917893167e-06,
+          "cosine": 0.9999999999967675
+        },
+        "scores": {
+          "native_l2": 0.1810542722857579,
+          "ref_l2": 0.18105431865946997,
+          "relative_l2": 2.8450623229138117e-06,
+          "cosine": 0.9999999999959851
+        }
+      }
+    }
+  },
+  "gradient_clipping_steps_pytorch": 50,
+  "bn_controls": {
+    "frozen_initial_no_sgd_default_momentum": {
+      "pytorch": {
+        "mAP50": 47.338238580066715,
+        "mAP50-95": 34.249098820376624
+      },
+      "jittor": {
+        "mAP50": 47.34550571105692,
+        "mAP50-95": 34.25096328439615
+      }
+    },
+    "fixed_weights_recalibrated_with_50_training_batches": {
+      "method": "Each variant reset BN buffers; cumulative mean (momentum=None), no gradient updates. All scored in same PyTorch evaluator on the original 200 validation images.",
+      "initial": {
+        "mAP50": 46.8148686472905,
+        "mAP50-95": 33.615868717765714
+      },
+      "pytorch": {
+        "mAP50": 42.47931439816787,
+        "mAP50-95": 30.76012228429652
+      },
+      "jittor": {
+        "mAP50": 40.92213794341135,
+        "mAP50-95": 29.20003478889866
+      }
+    }
+  },
+  "pytorch_minus_jittor_ap_before_recalibration": 6.926618766298638,
+  "pytorch_minus_jittor_ap_after_recalibration": 1.5600874953978625,
+  "gap_shrinkage_fraction": 0.774769256395567
+}

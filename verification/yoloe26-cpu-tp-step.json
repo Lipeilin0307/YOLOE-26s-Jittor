@@ -1,0 +1,281 @@
+{
+  "model": "YOLOE-26s, TP, local WSL CPU, one instrumented update",
+  "batch_sha256": "a74b6d202accf35ff10a983ef85f403d85cd2b5ab05b03edcc71dc4b3e65d3ae",
+  "init_sha256": "6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416",
+  "input_shape": [
+    2,
+    3,
+    160,
+    160
+  ],
+  "objects": 4,
+  "alignment": "Same initialization, real RGB pixels, labels, per-image prompt order, FP32, dual-head E2E loss, clip at 10 and MuSGD smoke settings with no warmup. Native gradients are materialized before the optimizer update.",
+  "losses": {
+    "loss": {
+      "pytorch": 14.342251777648926,
+      "jittor": 14.342246055603027
+    },
+    "cls_loss": {
+      "pytorch": 5.673241138458252,
+      "jittor": 5.673232555389404
+    },
+    "box_loss": {
+      "pytorch": 1.9269742965698242,
+      "jittor": 1.9269802570343018
+    },
+    "l1_loss": {
+      "pytorch": 0.022486120462417603,
+      "jittor": 0.022486364468932152
+    }
+  },
+  "comparison": {
+    "loss": {
+      "relative_L2": 3.9896426217776905e-07,
+      "max_abs": 5.7220458984375e-06,
+      "reference_L2": 14.342251777648926,
+      "tensors": 1
+    },
+    "cls_loss": {
+      "relative_L2": 1.5129039358952346e-06,
+      "max_abs": 8.58306884765625e-06,
+      "reference_L2": 5.673241138458252,
+      "tensors": 1
+    },
+    "box_loss": {
+      "relative_L2": 3.093172798489938e-06,
+      "max_abs": 5.9604644775390625e-06,
+      "reference_L2": 1.9269742965698242,
+      "tensors": 1
+    },
+    "l1_loss": {
+      "relative_L2": 1.0851427882238648e-05,
+      "max_abs": 2.4400651454925537e-07,
+      "reference_L2": 0.022486120462417603,
+      "tensors": 1
+    },
+    "one2many.scores": {
+      "relative_L2": 2.9417774044028927e-07,
+      "max_abs": 6.4849853515625e-05,
+      "reference_L2": 3238.6578455565386,
+      "tensors": 1
+    },
+    "one2many.boxes": {
+      "relative_L2": 6.709076204059646e-06,
+      "max_abs": 0.0008029937744140625,
+      "reference_L2": 201.07826960990846,
+      "tensors": 1
+    },
+    "one2one.scores": {
+      "relative_L2": 3.2045768559798686e-07,
+      "max_abs": 7.152557373046875e-05,
+      "reference_L2": 3237.9201333975316,
+      "tensors": 1
+    },
+    "one2one.boxes": {
+      "relative_L2": 4.889657166017906e-06,
+      "max_abs": 0.00025284290313720703,
+      "reference_L2": 164.9029619856915,
+      "tensors": 1
+    },
+    "gradient": {
+      "relative_L2": 4.0846130837122544e-05,
+      "max_abs": 0.00021696090698242188,
+      "reference_L2": 220.96812436461843,
+      "tensors": 394
+    },
+    "gradient.backbone": {
+      "relative_L2": 4.17760608224398e-05,
+      "max_abs": 0.00021696090698242188,
+      "reference_L2": 207.56649689188635,
+      "tensors": 120
+    },
+    "gradient.neck": {
+      "relative_L2": 3.6015838742190555e-05,
+      "max_abs": 0.00015604496002197266,
+      "reference_L2": 68.20833182658761,
+      "tensors": 114
+    },
+    "gradient.cv2": {
+      "relative_L2": 1.5780693357919563e-05,
+      "max_abs": 5.042552947998047e-05,
+      "reference_L2": 29.288571200675147,
+      "tensors": 24
+    },
+    "gradient.cv3": {
+      "relative_L2": 8.71823162588773e-06,
+      "max_abs": 9.298324584960938e-06,
+      "reference_L2": 11.793889595607155,
+      "tensors": 42
+    },
+    "gradient.one2one_cv2": {
+      "relative_L2": 1.5021368690290977e-05,
+      "max_abs": 9.953975677490234e-06,
+      "reference_L2": 6.6708181280623196,
+      "tensors": 24
+    },
+    "gradient.one2one_cv3": {
+      "relative_L2": 1.0477686977102984e-05,
+      "max_abs": 2.7781352400779724e-06,
+      "reference_L2": 1.8706164533768224,
+      "tensors": 42
+    },
+    "gradient.cv4": {
+      "relative_L2": 8.062982016528621e-06,
+      "max_abs": 7.033348083496094e-06,
+      "reference_L2": 0.9107893635562561,
+      "tensors": 12
+    },
+    "gradient.one2one_cv4": {
+      "relative_L2": 7.452569648710264e-06,
+      "max_abs": 6.631016731262207e-07,
+      "reference_L2": 0.14085543377855794,
+      "tensors": 12
+    },
+    "gradient.reprta": {
+      "relative_L2": 6.743453721425241e-06,
+      "max_abs": 7.27921724319458e-06,
+      "reference_L2": 6.702252604938039,
+      "tensors": 4
+    },
+    "update": {
+      "relative_L2": 0.018160779514287052,
+      "max_abs": 4.852563142776489e-05,
+      "reference_L2": 0.04230421265217672,
+      "tensors": 394
+    },
+    "update.backbone": {
+      "relative_L2": 0.010030614369718714,
+      "max_abs": 1.3232231140136719e-05,
+      "reference_L2": 0.030601510568449102,
+      "tensors": 120
+    },
+    "update.neck": {
+      "relative_L2": 0.0188109417799678,
+      "max_abs": 2.0615290850400925e-05,
+      "reference_L2": 0.015485535033238072,
+      "tensors": 114
+    },
+    "update.cv2": {
+      "relative_L2": 0.01132105303673627,
+      "max_abs": 1.0010204277932644e-05,
+      "reference_L2": 0.004895922879615148,
+      "tensors": 24
+    },
+    "update.cv3": {
+      "relative_L2": 0.02504802896432565,
+      "max_abs": 4.852563142776489e-05,
+      "reference_L2": 0.017658724183173137,
+      "tensors": 42
+    },
+    "update.one2one_cv2": {
+      "relative_L2": 0.029726000766679386,
+      "max_abs": 3.201351501047611e-05,
+      "reference_L2": 0.0028542294133143487,
+      "tensors": 24
+    },
+    "update.one2one_cv3": {
+      "relative_L2": 0.027291285886245322,
+      "max_abs": 3.131106495857239e-05,
+      "reference_L2": 0.016389872672038196,
+      "tensors": 42
+    },
+    "update.cv4": {
+      "relative_L2": 7.219088673267874e-06,
+      "max_abs": 2.874003257602453e-10,
+      "reference_L2": 9.816188817583575e-05,
+      "tensors": 12
+    },
+    "update.one2one_cv4": {
+      "relative_L2": 9.97074300672974e-06,
+      "max_abs": 4.8203219193965197e-11,
+      "reference_L2": 1.5014615994622585e-05,
+      "tensors": 12
+    },
+    "update.reprta": {
+      "relative_L2": 0.08014253638826714,
+      "max_abs": 1.492307819717098e-05,
+      "reference_L2": 0.0008984153933913966,
+      "tensors": 4
+    },
+    "bn_increment": {
+      "relative_L2": 4.784183067757837e-06,
+      "max_abs": 1.9073486328125e-06,
+      "reference_L2": 2.3141126233209643,
+      "tensors": 260
+    },
+    "bn_increment.running_mean": {
+      "relative_L2": 1.3736175042096415e-06,
+      "max_abs": 9.5367431640625e-07,
+      "reference_L2": 1.7536078841556177,
+      "tensors": 130
+    },
+    "bn_increment.running_var": {
+      "relative_L2": 7.156430401282901e-06,
+      "max_abs": 1.9073486328125e-06,
+      "reference_L2": 1.5099591458184207,
+      "tensors": 130
+    }
+  },
+  "official_gradient_control": {
+    "update": {
+      "relative_L2": 0.011350636185091256,
+      "max_abs": 3.131106495857239e-05,
+      "reference_L2": 0.04230421265217672,
+      "tensors": 394
+    },
+    "update.backbone": {
+      "relative_L2": 0.007446004699003073,
+      "max_abs": 9.09389927983284e-06,
+      "reference_L2": 0.030601510568449102,
+      "tensors": 120
+    },
+    "update.neck": {
+      "relative_L2": 0.012638041666507182,
+      "max_abs": 9.78820025920868e-06,
+      "reference_L2": 0.015485535033238072,
+      "tensors": 114
+    },
+    "update.cv2": {
+      "relative_L2": 0.006512497812904496,
+      "max_abs": 4.409812390804291e-06,
+      "reference_L2": 0.004895922879615148,
+      "tensors": 24
+    },
+    "update.cv3": {
+      "relative_L2": 0.014512832158344919,
+      "max_abs": 3.131106495857239e-05,
+      "reference_L2": 0.017658724183173137,
+      "tensors": 42
+    },
+    "update.one2one_cv2": {
+      "relative_L2": 0.01028558404435116,
+      "max_abs": 1.2786826118826866e-05,
+      "reference_L2": 0.0028542294133143487,
+      "tensors": 24
+    },
+    "update.one2one_cv3": {
+      "relative_L2": 0.01636774500267509,
+      "max_abs": 2.197176218032837e-05,
+      "reference_L2": 0.016389872672038196,
+      "tensors": 42
+    },
+    "update.cv4": {
+      "relative_L2": 1.0503734105184155e-06,
+      "max_abs": 4.092726157978177e-11,
+      "reference_L2": 9.816188817583575e-05,
+      "tensors": 12
+    },
+    "update.one2one_cv4": {
+      "relative_L2": 1.4307980879991165e-06,
+      "max_abs": 6.59383658785373e-12,
+      "reference_L2": 1.5014615994622585e-05,
+      "tensors": 12
+    },
+    "update.reprta": {
+      "relative_L2": 0.03203789256047684,
+      "max_abs": 8.529649903721293e-06,
+      "reference_L2": 0.0008984153933913966,
+      "tensors": 4
+    }
+  }
+}

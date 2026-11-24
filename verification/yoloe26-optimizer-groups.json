@@ -1,0 +1,45 @@
+{
+  "TP": {
+    "checked": 432,
+    "active": 394,
+    "groups": {
+      "muon": 142,
+      "bn": 136,
+      "bias": 154
+    },
+    "boosted": 84,
+    "mismatches": 0
+  },
+  "VP": {
+    "checked": 432,
+    "active": 62,
+    "groups": {
+      "weight": 142,
+      "bn": 136,
+      "bias": 154
+    },
+    "boosted": 0,
+    "mismatches": 0
+  },
+  "PF": {
+    "checked": 12,
+    "active": 12,
+    "groups": {
+      "weight": 6,
+      "bias": 6
+    },
+    "boosted": 0,
+    "mismatches": 0
+  },
+  "SEG": {
+    "checked": 508,
+    "active": 68,
+    "groups": {
+      "muon": 170,
+      "bn": 156,
+      "bias": 182
+    },
+    "boosted": 92,
+    "mismatches": 0
+  }
+}

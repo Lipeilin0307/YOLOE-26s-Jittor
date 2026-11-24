@@ -1,0 +1,9 @@
+jittor==1.3.11.0
+numpy==1.23.5
+opencv-python==4.10.0.84
+Pillow
+PyYAML
+regex
+ftfy
+lvis==0.5.3
+pycocotools==2.0.11

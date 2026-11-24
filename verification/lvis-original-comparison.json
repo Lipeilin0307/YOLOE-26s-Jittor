@@ -1,0 +1,70 @@
+{
+  "smoke": false,
+  "images": 4809,
+  "protocol": {
+    "size": 640,
+    "batch": 1,
+    "classes": 1203,
+    "head": "one2one",
+    "nms": false,
+    "confidence": 0.001,
+    "max_det": 1000,
+    "detections_per_category": 10000,
+    "metrics": "LVIS Fixed AP bbox",
+    "paper_e2e_ap": 29.9
+  },
+  "train_image_overlap": 0,
+  "coco_val_image_overlap_full": 4809,
+  "metrics": {
+    "AP": {
+      "pytorch": 13.273001549959526,
+      "jittor": 12.849376266031953,
+      "delta": -0.4236252839275725
+    },
+    "AP50": {
+      "pytorch": 17.43004558465964,
+      "jittor": 17.033879630541282,
+      "delta": -0.3961659541183593
+    },
+    "AP75": {
+      "pytorch": 14.07796839306302,
+      "jittor": 13.72805034040725,
+      "delta": -0.34991805265577014
+    },
+    "APs": {
+      "pytorch": 9.098242762106674,
+      "jittor": 8.922151026533994,
+      "delta": -0.17609173557267965
+    },
+    "APm": {
+      "pytorch": 16.808230537676444,
+      "jittor": 17.172820889187644,
+      "delta": 0.36459035151120034
+    },
+    "APl": {
+      "pytorch": 28.85008321350867,
+      "jittor": 28.749907176830387,
+      "delta": -0.10017603667828467
+    },
+    "APr": {
+      "pytorch": 11.282425597747494,
+      "jittor": 10.19508389531839,
+      "delta": -1.0873417024291037
+    },
+    "APc": {
+      "pytorch": 11.309428644933588,
+      "jittor": 10.496861683177624,
+      "delta": -0.8125669617559641
+    },
+    "APf": {
+      "pytorch": 15.37267499183301,
+      "jittor": 15.41343281367897,
+      "delta": 0.04075782184595944
+    }
+  },
+  "best_sha": {
+    "pytorch": "c5ed64cb9fc371436c90a95ba607f0971e40519cee28d72b74f4653a467f0bdc",
+    "jittor": "f8aefb68f5a46137c1356f4ba1900a4d221e55b70775713484f71a93e1b7398f"
+  },
+  "manifest_sha": "262352d495682cab45e2ab82f685bbb0bc10f0dda3b8b6b14770c2cafce136e9"
+}

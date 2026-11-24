@@ -1,0 +1,25 @@
+{
+  "model": "YOLOE-26s TP",
+  "layer": "model.0.bn",
+  "device": "WSL CPU",
+  "batch": "4 real COCO training images, 320 x 320",
+  "batch_sha256": "a74b6d202accf35ff10a983ef85f403d85cd2b5ab05b03edcc71dc4b3e65d3ae",
+  "det_init_sha256": "6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416",
+  "method": "PyTorch computed the first convolution from the training initialization. Both frameworks used that identical activation, affine parameters, running buffers and a fixed upstream gradient (NumPy PCG64, seed 26). Errors use relative L2 against PyTorch; running-statistic errors use the reference one-step increment as denominator.",
+  "error_before": {
+    "y": 0.00022489425892035898,
+    "dx": 0.00005560346156909386,
+    "dw": 0.00026633540998574157,
+    "db": 0.000005508307523017289,
+    "mean": 0.0033393270052862745,
+    "var": 0.0005392744377984452
+  },
+  "error_after": {
+    "y": 5.149464318996461e-8,
+    "dx": 6.275229741282771e-8,
+    "dw": 9.803037635905464e-7,
+    "db": 1.048294923354387e-6,
+    "mean": 7.158794036521572e-8,
+    "var": 4.148144432754877e-6
+  }
+}

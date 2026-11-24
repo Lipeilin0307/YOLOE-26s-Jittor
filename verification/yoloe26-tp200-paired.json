@@ -1,0 +1,103 @@
+{
+  "experiment": "YOLOE-26s TP, one epoch, COCO 200 train / 200 val",
+  "config": {
+    "init_sha256": "6047e8d4f5b3613cd15a8baf71e03fb7428f6eaec883f16c9d4f7aa86408f416",
+    "raw_text_sha256": "47466ad1fa74e5b8f7bafebfed19e20f940e99f92a0a7aa2e814a36931bd2e19",
+    "seed": 20261121,
+    "device": "cpu",
+    "size": 320,
+    "batch": 4,
+    "optimizer": "MuSGD",
+    "lr": 0.00125,
+    "momentum": 0.9,
+    "decay": 0.0007,
+    "clip_grad_norm": 10,
+    "warmup": 0,
+    "optimizer_steps": 50,
+    "checkpoint": "FP32 EMA",
+    "replay": {
+      "train": {
+        "images": 200,
+        "steps": 50,
+        "arrays_sha256": "2382f490d72bab60d17e56827988f250548e443d78775acaf0bfa2e2d4cac4a1",
+        "manifest_sha256": "8b90422e1cf6e12e05d07f8b0648d9750dcbdef4a6a3588e570b52c85c3f9f8f"
+      },
+      "val": {
+        "images": 200,
+        "steps": 50,
+        "arrays_sha256": "51a7a1ba570e33b1d734ad8386e9d81818e8c6369e6dc9b94e717f7e876e2412",
+        "manifest_sha256": "741fd1c51da7d7aa19c734a662e1d6778590bf2bde0120821a73c9f95c58e9f3"
+      }
+    }
+  },
+  "checkpoints": {
+    "pytorch": "b3686a8b517e4edc22077bd95485aea59ccca9645321af72c9b15181ea08cc2a",
+    "jittor": "362ecbe69ca5246b5f60bdcff98d7bdba9809a843ded8907467e802acef5ae16"
+  },
+  "mean_loss": {
+    "dual_loss_per_image": {
+      "pytorch": 5.511175308227539,
+      "jittor": 5.533506641387939,
+      "delta_jittor_minus_pytorch": 0.022331333160400035
+    },
+    "box": {
+      "pytorch": 1.576289314031601,
+      "jittor": 1.5645044481754302,
+      "delta_jittor_minus_pytorch": -0.011784865856170779
+    },
+    "cls": {
+      "pytorch": 5.0463392162323,
+      "jittor": 5.0568122291564945,
+      "delta_jittor_minus_pytorch": 0.010473012924194336
+    },
+    "l1": {
+      "pytorch": 0.01311405141837895,
+      "jittor": 0.013114781258627773,
+      "delta_jittor_minus_pytorch": 7.298402488233047e-07
+    }
+  },
+  "first_batch_loss": {
+    "dual_loss_per_image": {
+      "pytorch": 5.855565547943115,
+      "jittor": 5.855563163757324,
+      "delta_jittor_minus_pytorch": -2.384185791015625e-06
+    },
+    "box": {
+      "pytorch": 0.6134408712387085,
+      "jittor": 0.6134406328201294,
+      "delta_jittor_minus_pytorch": -2.384185791015625e-07
+    },
+    "cls": {
+      "pytorch": 5.932736873626709,
+      "jittor": 5.932728290557861,
+      "delta_jittor_minus_pytorch": -8.58306884765625e-06
+    },
+    "l1": {
+      "pytorch": 0.006381705868989229,
+      "jittor": 0.006381708662956953,
+      "delta_jittor_minus_pytorch": 2.7939677238464355e-09
+    }
+  },
+  "bbox_AP_0_to_100": {
+    "AP50": {
+      "pytorch": 0.8624701340601674,
+      "jittor": 0.8427012435913688,
+      "delta_jittor_minus_pytorch": -0.019768890468798594
+    },
+    "AP50-95": {
+      "pytorch": 0.6222803076590483,
+      "jittor": 0.5923441760956438,
+      "delta_jittor_minus_pytorch": -0.029936131563404467
+    }
+  },
+  "validation_head": "one2one",
+  "max_det": 300,
+  "conf": 0.001,
+  "validation_evaluator": "native_metrics.Evaluator",
+  "jittor_source_sha256": {
+    "model.py": "baf0e36f7c555605c3a6478fd4ed7b870acd3fd3a6a9d4a9270e6154bb5900cd",
+    "objective.py": "7cad15d084023f5a6cf34e5590043a6eade42b27c14769e6abd36b4b7e813379",
+    "optimizer.py": "0bd1e2a5320f3ad3b2acaa3da395cd321d7f5766348d4f8cec0ad5b0c1fb3680",
+    "train.py": "4d881397a4ae8de1bdcc9df1f56c874bdc97e035d962244f93c503d589aa410d"
+  }
+}

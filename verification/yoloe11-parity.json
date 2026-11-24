@@ -1,0 +1,53 @@
+{
+  "model": "YOLOE-11s-TP",
+  "checkpoint_sha": "8e439445c87338b79d9ce21dec109f4621e26df67e94d26ea1a98c1e64dce3e3",
+  "text_sha": "a67804d1b0f07b8b9a20c1761ec0847f34660f5fa338ec70e8f3fce68ed95e54",
+  "init_sha": "f3ce68dfb1c4d9d6a48a218dfda4aa44c46fc28e0aae5aae8c628275b38a1eb7",
+  "raw_sha": "7386b5ff39c8bce3423bc2795ae071ba48f14eb9522c3c886b3e88e6d881d404",
+  "coco_embedding_max_abs": 4.470348358154297e-07,
+  "cases": [
+    {
+      "image": "000000000139.jpg",
+      "classes": [
+        "chair",
+        "person",
+        "potted plant"
+      ],
+      "post_nms_detections": 63,
+      "max_abs_error": {
+        "text": 3.129243850708008e-07,
+        "reprta": 2.980232238769531e-07,
+        "p3": 3.8743019104003906e-05,
+        "p4": 6.264448165893555e-05,
+        "p5": 0.00011938810348510742,
+        "distribution_logits": 0.0005130767822265625,
+        "class_logits": 0.00011444091796875,
+        "decoded_xyxy_pixels": 0.00530242919921875,
+        "post_nms_xyxy_pixels": 0.0001678466796875,
+        "post_nms_confidence": 9.98377799987793e-07
+      }
+    },
+    {
+      "image": "000000001993.jpg",
+      "classes": [
+        "potted plant",
+        "armchair",
+        "chair",
+        "person"
+      ],
+      "post_nms_detections": 46,
+      "max_abs_error": {
+        "text": 3.501772880554199e-07,
+        "reprta": 2.4586915969848633e-07,
+        "p3": 7.927417755126953e-06,
+        "p4": 1.3872981071472168e-05,
+        "p5": 2.09808349609375e-05,
+        "distribution_logits": 0.000148773193359375,
+        "class_logits": 9.5367431640625e-05,
+        "decoded_xyxy_pixels": 0.0015411376953125,
+        "post_nms_xyxy_pixels": 0.000213623046875,
+        "post_nms_confidence": 1.6093254089355469e-06
+      }
+    }
+  ]
+}

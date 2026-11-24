@@ -1,0 +1,159 @@
+{
+  "model": "YOLOE-26s text-prompt bounding-box detection",
+  "experiment": "Independent PyTorch and Jittor inference from the same public segmentation release; no training",
+  "release": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26s-seg.pt",
+  "paper": "https://arxiv.org/html/2606.03748v1",
+  "paper_table": "S12",
+  "paper_e2e_ap": 29.9,
+  "images": 4809,
+  "protocol": {
+    "size": 640,
+    "batch": 1,
+    "classes": 1203,
+    "head": "one2one",
+    "nms": false,
+    "confidence": 0.001,
+    "max_det": 1000,
+    "detections_per_category": 10000,
+    "metrics": "LVIS Fixed AP bbox",
+    "paper_e2e_ap": 29.9
+  },
+  "metric_scale": "AP points from 0 to 100",
+  "metrics": {
+    "AP": {
+      "pytorch": 30.22082839851002,
+      "jittor": 30.220836551122222,
+      "delta": 8.152612203105036e-06
+    },
+    "AP50": {
+      "pytorch": 41.141479335899874,
+      "jittor": 41.1414910852313,
+      "delta": 1.1749331427779452e-05
+    },
+    "AP75": {
+      "pytorch": 32.14952946357643,
+      "jittor": 32.1495419087915,
+      "delta": 1.2445215070044924e-05
+    },
+    "APs": {
+      "pytorch": 20.445647457257827,
+      "jittor": 20.445641712912614,
+      "delta": -5.7443452128325134e-06
+    },
+    "APm": {
+      "pytorch": 39.75798599909201,
+      "jittor": 39.75798354162117,
+      "delta": -2.457470834826836e-06
+    },
+    "APl": {
+      "pytorch": 53.95942086187239,
+      "jittor": 53.95942041722315,
+      "delta": -4.4464923831810665e-07
+    },
+    "APr": {
+      "pytorch": 25.324813554768788,
+      "jittor": 25.324813554768788,
+      "delta": 0.0
+    },
+    "APc": {
+      "pytorch": 29.275347408766923,
+      "jittor": 29.275347408766923,
+      "delta": 0.0
+    },
+    "APf": {
+      "pytorch": 31.940396471834575,
+      "jittor": 31.940413321963685,
+      "delta": 1.685012911067929e-05
+    }
+  },
+  "pytorch_minus_paper": 0.3208283985100202,
+  "jittor_minus_paper": 0.3208365511222233,
+  "devices": {
+    "pytorch": "local RTX 5090, FP32, TF32 disabled",
+    "jittor": "local WSL CPU, FP32, 3 single-threaded inference workers, unfused contrastive head"
+  },
+  "weight_audit": {
+    "source_sha256": "48f24206bc8680d60cbbfa296b0140da849669b9515058b72f5a945142df0654",
+    "native_sha256": "f1bd91a223a108fcaef9114308910e7ef98c912208c14340f5120eed30022380",
+    "native_graph_sha256": "37edbe23635c3d6f3f966bff65e4dfa20c4b66b6e5fd292e22e1d184236de9ad",
+    "compared_tensors": 822,
+    "native_tensors": 692,
+    "omitted_batch_counters": 130,
+    "omitted_mask_branches": [
+      "proto",
+      "cv5",
+      "one2one_cv5"
+    ],
+    "release_end2end_default": false,
+    "evaluation_head": "one2one"
+  },
+  "text": {
+    "names": 1203,
+    "alias": "first slash-delimited author alias",
+    "encoder_sha256": "35d7f213e4d75f38514e4656ad3cb91158bd33e3805d8ac349f23b186f66982f",
+    "pytorch_sha256": "4e64d5a96a7ae283298e22ed75271a40e575211d64778b734a5b9cfa79eccf96",
+    "jittor_sha256": "367911f417bbd2d88350ce114a1bedcd183a13be0be8456e130335295e6a093f",
+    "max_abs": 3.5762786865234375e-07,
+    "rms": 3.277621019037724e-08
+  },
+  "manifest_sha256": "1394b831517029f3ed9cc1f555be4a476e4b4ff4cd0e3aea48cf33c491d5bf94",
+  "benchmark_assets": {
+    "minival.txt": "4d3489ae1a59dd0e26237e60769180d67ef676a3643aabe983531228c8bd05b0",
+    "minival.json": "02301f6ccd89d1ee3d35112cb57d000c3396f34e4073066c90b2c1fbf47b55ce",
+    "lvis.yaml": "af2b30726df6bc3019dfef2b5b1d185b352fe2474e10f620d8e851b7e52cc291"
+  },
+  "native_environment_packages_present": {
+    "torch": false,
+    "torchvision": false,
+    "ultralytics": false
+  },
+  "detections": {
+    "pytorch": 4300907,
+    "jittor": 4300906
+  },
+  "prediction_sha256": {
+    "pytorch": "1d5d33cc3b72849f1ecb588da4cabd601949c0c274439cf3e1d390443be17675",
+    "jittor": "0c278181726312a1c6afd9d979f1561485b0fca4bb0694893fb144a4c6eed551"
+  },
+  "reference_versions": {
+    "torch": "2.7.1+cu128",
+    "ultralytics": "8.4.216",
+    "jittor": "1.3.11.0",
+    "lvis": "0.5.3"
+  },
+  "smoke_output_alignment": {
+    "images": [
+      139,
+      50896,
+      106266,
+      158945,
+      207306,
+      261116,
+      312421,
+      366611,
+      419601,
+      471756,
+      526103,
+      581781
+    ],
+    "method": "Pair boxes within each image and category by minimum xywh Linf distance plus absolute score difference, original-image pixel coordinates.",
+    "thresholds": {
+      "0.001": {
+        "paired": 11620,
+        "pytorch_only": 0,
+        "jittor_only": 0,
+        "box_xywh_max_abs_px": 0.0013427734375,
+        "box_xywh_p99_abs_px": 0.000335693359375,
+        "score_max_abs": 6.446242332458496e-05
+      },
+      "0.1": {
+        "paired": 851,
+        "pytorch_only": 0,
+        "jittor_only": 0,
+        "box_xywh_max_abs_px": 0.00079345703125,
+        "box_xywh_p99_abs_px": 0.000244140625,
+        "score_max_abs": 6.446242332458496e-05
+      }
+    }
+  }
+}
