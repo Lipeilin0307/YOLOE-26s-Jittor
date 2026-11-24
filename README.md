@@ -33,7 +33,7 @@ python predict.py --device cpu --init init --weights weights/tp-coco20k.npz \
   --text-model mobileclip2_b.ts --image data/example/cats.png --classes cat --conf 0.15
 ```
 
-输出 JSON 包含类别、置信度和原图上的像素坐标 `[x1,y1,x2,y2]`。也可用自己的 JPEG 或更换提示词。Jittor 首次运行会编译算子。
+输出 JSON 包含类别、置信度和原图上的像素坐标 `[x1,y1,x2,y2]`。本机 CPU 在这张图上检出了两只猫，置信度为 0.943 和 0.916。也可换用自己的图像和提示词。Jittor 首次运行会编译算子。
 
 ## 下载权重
 
@@ -76,7 +76,7 @@ python train.py --init init --data data/coco20k --out runs/coco20k \
 
 修订版 TP 使用原 PF 配方时，单类 AP 为 41.385。固定 48 张图逐批跟踪发现，新旧 TP 的 P5 正样本位置从第 325 批起持续分歧；第 364 批起，新 TP 原配方连续 25 批给参考位置左邻更高的中位分数。只将 P5 单类输出偏置的预热起始学习率从 0.1 降至 0.01，完整 10 轮后的 AP 回到 45.046。这个结果来自本次划分和种子。[逐批曲线](verification/pf-epoch1-diagnostics.png) · [单轮消融](verification/yoloe26-pf-epoch1.json) · [十轮复验](verification/yoloe26-pf-slow-bias-coco20k.json)
 
-LVIS 评测、同义提示实验和历史验证数据见[实验说明](docs/experiments.md)。
+四份发布权重也在干净检出的代码中逐个重载，使用 CPU、320 输入和相同的 200 张验证图完成评测。[发布版 200 张验证记录](verification/release-smoke200.json)。LVIS 评测、同义提示实验和历史验证数据见[实验说明](docs/experiments.md)。
 
 ## 来源与许可
 
