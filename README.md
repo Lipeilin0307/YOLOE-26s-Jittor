@@ -4,17 +4,29 @@ YOLOE 开放词汇检测与实例分割的 Jittor 实现。基于 YOLOE-26s，�
 
 ## 结果
 
-以下为四份发布权重在 5,000 张 COCO val2017 图像上重载后的 AP50–95，单位为 AP 点。VP、PF、SEG 均从修订版 TP 最佳权重分别训练。PyTorch 为同一划分下的独立训练基线。最终的 PF 在 Jittor 侧将步长 32 的单类输出偏置预热起始学习率调至 0.01。[四阶段原始指标与哈希](verification/coco20k-release.json) · [PyTorch 基线代码](reference/pytorch/README.md)
+### LVIS 零样本文本提示检测
 
-| 任务 | PyTorch | Jittor |
-| --- | ---: | ---: |
-| TP 文本提示检测 | 41.214 | 41.138 |
-| VP 视觉提示检测 | 32.774 | 32.662 |
-| PF 单类检测 | 45.248 | 45.046 |
-| PF 80 类检索 | 41.195 | 41.117 |
-| SEG 实例分割（掩码） | 29.410 | 30.650 |
+![LVIS 文本提示检测。原论文 v8s 和 11s 分别为 27.9、27.5 AP，26s 端到端报告值为 29.9。同一官方权重在两框架均为 30.221；COCO 20k 自训后 PyTorch 为 13.273，Jittor 为 12.913。](docs/figures/lvis-text-prompt.png)
 
-LVIS minival 使用 4,809 张图、1,203 个类别和端到端检测头，报告 bbox Fixed AP。用同一份官方检查点评测，PyTorch 为 **30.220828**、Jittor 为 **30.220837**。用 COCO 20k 单独训练所得 TP 权重，分别为 **13.273** 和 **12.913**。YOLO26 技术报告在其大规模开放词汇配方下给出的 26s 端到端文本提示参照为 **29.9**。[同权重复测](verification/yoloe26-official-lvis.json) · [COCO 20k 自训对照](verification/lvis-coco20k-release.json) · [技术报告表 12](https://arxiv.org/html/2606.03748v1)
+原始 YOLOE 论文报告的是 v8s 和 11s 的非端到端结果。与本仓库型号和检测头对应的文献参照来自后续 YOLO26 技术报告：26s 在开放词汇训练配方下达到 **29.9 AP**。[YOLOE 原论文表 1](https://arxiv.org/html/2503.07465v1#S4.T1) · [YOLO26 技术报告表 12](https://arxiv.org/html/2606.03748v1#S4.T12)
+
+在 LVIS minival 的 4,809 张图、1,203 个类别上，同一份官方权重经 PyTorch 和 Jittor 推理，bbox Fixed AP 分别为 **30.220828** 和 **30.220837**。在 COCO 20k 上分别训练 TP 后，PyTorch 为 **13.273**，Jittor 为 **12.913**。因此在本次实验中，Jittor 自训权重距同配置 PyTorch **0.360 AP**，距技术报告的大规模训练结果 **16.987 AP**。[同权重复测](verification/yoloe26-official-lvis.json) · [COCO 20k 自训对照](verification/lvis-coco20k-release.json)
+
+### COCO 四阶段训练与最佳权重
+
+![PyTorch 与 Jittor 的 COCO 逐轮验证 AP。TP 记录 30 轮，VP、PF、SEG 各记录 10 轮；PF 为单类框 AP，SEG 为掩码 AP。](docs/figures/coco-training.png)
+
+折线来自正式训练日志。两边均用 20,000 张图训练、5,000 张图验证，每个点为该轮结束时的 AP50–95。各子图使用各自标出的纵轴范围，PF 放大了 45 AP 附近的变化。VP、PF、SEG 各自从本框架的 TP 最佳权重开始训练；Jittor 的 PF 将步长 32 的单类输出偏置预热起始学习率调至 0.01。[逐轮数据](verification/coco20k-epoch-ap.csv) · [绘图脚本](docs/figures/plot_results.py)
+
+下表给出最佳权重重载后独立验证的 AP50–95。训练期间的逐轮验证按长宽比分批，独立验证使用单独的评测流程，两者的数值可略有不同。差值按原始精度计算，正值表示 Jittor 较高。[四阶段原始指标与哈希](verification/coco20k-release.json) · [PyTorch 基线代码](reference/pytorch/README.md)
+
+| 任务 | PyTorch | Jittor | Jittor − PyTorch（AP 点） |
+| --- | ---: | ---: | ---: |
+| TP 文本提示检测 | 41.214 | 41.138 | −0.076 |
+| VP 视觉提示检测 | 32.774 | 32.662 | −0.112 |
+| PF 单类检测 | 45.248 | 45.046 | −0.202 |
+| PF 80 类检索 | 41.195 | 41.117 | −0.078 |
+| SEG 实例分割（掩码） | 29.410 | 30.650 | +1.240 |
 
 ## 快速开始：在一张图上尝试文本提示
 
